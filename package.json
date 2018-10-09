@@ -24,7 +24,9 @@
     "coverage": "nyc npm test",
     "report": "nyc report --reporter=text-lcov | coveralls"
   },
-  "dependencies": {},
+  "dependencies": {
+    "currify": "^3.0.0"
+  },
   "license": "MIT",
   "main": "index.js",
   "devDependencies": {

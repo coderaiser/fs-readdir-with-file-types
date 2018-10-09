@@ -1,15 +1,19 @@
 'use strict';
 
 const fs = require('fs');
+const path = require('path');
 const {promisify} = require('util');
+
+const currify = require('currify');
 
 const readdir = promisify(fs.readdir);
 const lstat = promisify(fs.lstat);
+const getDirEnt = currify(_getDirEnt);
 
 const isString = (a) => typeof a === 'string';
 
-module.exports = async (path) => {
-    const names = await readdir(path, {
+module.exports = async (dir) => {
+    const names = await readdir(dir, {
         withFileTypes: true,
     });
     
@@ -19,15 +23,18 @@ module.exports = async (path) => {
     if (!isString(names[0]))
         return names;
     
-    return await getAllDirEnts(names);
+    return await getAllDirEnts(dir, names);
 };
 
-async function getAllDirEnts(names) {
-    return Promise.all(names.map(getDirEnt));
+async function getAllDirEnts(dir, names) {
+    const promises = names.map(getDirEnt(dir));
+    
+    return Promise.all(promises);
 }
 
-async function getDirEnt(name) {
-    const stat = await lstat(name);
+async function _getDirEnt(dir, name) {
+    const fullPath = path.join(dir, name);
+    const stat = await lstat(fullPath);
     
     const {
         isBlockDevice,
