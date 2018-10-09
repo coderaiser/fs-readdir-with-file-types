@@ -1,0 +1,5 @@
+.*
+*.swp
+coverage
+test.js
+

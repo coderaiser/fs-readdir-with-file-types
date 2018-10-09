@@ -1,0 +1,44 @@
+{
+  "name": "fs-readdir-with-file-types",
+  "version": "1.0.0",
+  "author": "coderaiser <mnemonic.enemy@gmail.com> (https://github.com/coderaiser)",
+  "description": "fs.readdir withFileTypes ponyfill",
+  "homepage": "http://github.com/coderaiser/fs-readdir-with-file-types",
+  "keywords": [
+    "ponyfill",
+    "readdir",
+    "withFileTypes",
+    "fs"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/coderaiser/fs-readdir-with-file-types.git"
+  },
+  "scripts": {
+    "test": "tape test.js",
+    "lint": "redrun lint:*",
+    "lint:lib": "eslint -c .eslintrc.lib index.js",
+    "lint:test": "eslint -c .eslintrc test.js",
+    "watch:test": "npm run watcher -- \"npm test\"",
+    "watcher": "nodemon -w lib -w test -x",
+    "coverage": "nyc npm test",
+    "report": "nyc report --reporter=text-lcov | coveralls"
+  },
+  "dependencies": {
+  },
+  "license": "MIT",
+  "main": "index.js",
+  "devDependencies": {
+    "coveralls": "^3.0.0",
+    "eslint": "^5.0.1",
+    "eslint-plugin-node": "^7.0.1",
+    "mock-require": "^3.0.2",
+    "nodemon": "^1.11.0",
+    "nyc": "^13.0.1",
+    "redrun": "^7.0.0",
+    "tape": "^4.2.0"
+  },
+  "engines": {
+    "node": ">=8.3.0"
+  }
+}
