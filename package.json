@@ -1,6 +1,6 @@
 {
   "name": "fs-readdir-with-file-types",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "author": "coderaiser <mnemonic.enemy@gmail.com> (https://github.com/coderaiser)",
   "description": "fs.readdir withFileTypes ponyfill",
   "homepage": "http://github.com/coderaiser/fs-readdir-with-file-types",
@@ -24,8 +24,7 @@
     "coverage": "nyc npm test",
     "report": "nyc report --reporter=text-lcov | coveralls"
   },
-  "dependencies": {
-  },
+  "dependencies": {},
   "license": "MIT",
   "main": "index.js",
   "devDependencies": {
