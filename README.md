@@ -74,7 +74,7 @@ readdir('.', (e, dirents) => {
 
 - [fs-copy-file](https://github.com/coderaiser/fs-copy-file "fs-copy-file") - Asynchronously copies src to dest.
 - [fs-copy-file-sync](https://github.com/coderaiser/fs-copy-file-sync "fs-copy-file-sync") - Synchronously copies src to dest.
-- [fs-readdir-sync-with-file-types](https://github.com/coderaiser/fs-readdir-sync-with-file-types "fs-readdir-sync-with-file-types") - Synchronously readdir with file types.
+- [fs-readdir-sync-with-file-types](https://github.com/coderaiser/fs-readdir-sync-with-file-types "fs-readdir-sync-with-file-types") - Synchronously read directory with file types.
 
 ## License
 MIT
