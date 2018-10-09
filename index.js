@@ -23,13 +23,7 @@ module.exports = async (path) => {
 };
 
 async function getAllDirEnts(names) {
-    const result = [];
-    
-    for (const name of names) {
-        result.push(await getDirEnt(name));
-    }
-    
-    return result;
+    return Promise.all(names.map(getDirEnt));
 }
 
 async function getDirEnt(name) {
