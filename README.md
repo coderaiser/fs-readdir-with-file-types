@@ -22,7 +22,7 @@ Example:
 const readdir = require('fs-readdir-with-file-types');
 
 async () => {
-    await readdirSync('.');
+    await readdir('.');
 }();
 
 // returns on node v10.10
